@@ -53,4 +53,9 @@
 .details {
   padding-left: 35px;
   font-weight: lighter;
+  padding-right: 35px; 
+}
+
+.details::selection {
+  background: gray;
 }
