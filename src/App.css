@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+* {
+  font-family: 'Exo', sans-serif;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.no-selection {
+  user-select: none;
+}
+
+.light-text {
+  font-weight: lighter;
+}
+
+.card, .err-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  
+  transition: 0.3s;    
+  padding: 1.5rem 2rem;  
+}
+
+.err-card {
+  background-color: red;
+  padding: 10px;
+  color: white;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: black;
+  color: white;      
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 55px 1fr;
+}
+
+.grid-intro {
+  grid-column: 2 / -1;  
+}
+
+.grid-header {
+  grid-column: 2 / -3;
+}
