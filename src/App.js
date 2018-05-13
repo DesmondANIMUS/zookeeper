@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimalList from './components/pages/AnimalList';
+import AnimalList from './containers/AnimalList';
 
 const App = () => (
   <div className="grid">
