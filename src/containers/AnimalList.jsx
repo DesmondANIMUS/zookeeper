@@ -6,13 +6,13 @@ import Animal from '../components/Animal';
 import {selectAnimal} from '../actions/actions';
 
 class AnimalList extends Component {        
-    selectAnimal = animalInfo => this.props.selectAnimal(animalInfo);
+    setAnimal = animalInfo => this.props.selectAnimal(animalInfo);
     render() {             
         if (this.props.selected) console.log("species: ", this.props.selected);
         if (!(this.props.selected)) console.log(this.props.selected)
         return (
             <div className="grid-animal-list">                 
-                {this.props.animals.map((animal, i) => <Animal key={i} selectAnimal={this.selectAnimal} animalInfo={animal}/>)}
+                {this.props.animals.map((animal, i) => <Animal key={i} setAnimal={this.setAnimal} animalInfo={animal}/>)}
             </div>
         );
     }
