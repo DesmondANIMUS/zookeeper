@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimalInfo from './containers/AnimalInfo';
 import AnimalList from './containers/AnimalList';
 
 const App = () => (
@@ -7,6 +8,7 @@ const App = () => (
     <AnimalList/>    
     <div className="grid-right">
       <h1 className="details no-selection">Details</h1>
+      <AnimalInfo />
     </div> 
   </div>
 );

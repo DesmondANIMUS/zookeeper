@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {selectAnimal} from '../actions/actions';
 
 const Animal = props => (
-    <div className="card no-selection" onClick={() => props.selectAnimal(props.animalInfo)}>
+    <div className="card no-selection" onMouseEnter={() => props.selectAnimal(props.animalInfo)}>
         {props.animalInfo.name}    
     </div>
 );
