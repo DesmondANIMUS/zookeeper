@@ -5,7 +5,6 @@ import selectAnimalReducer from './selectedAnimalReducer';
 
 const rootReducer = combineReducers({
     animals: animalReducer,
-    birbs: birbReducer,
     selectedAnimal: selectAnimalReducer
 })
 

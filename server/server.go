@@ -13,17 +13,7 @@ type Animal struct {
 
 var animalList []Animal
 
-func main() {
-	routes()
-	fmt.Println("Server is running on port: 8888")
-	http.ListenAndServe(":8888", nil)
-}
-
-func routes() {
-	http.HandleFunc("/animals", animals)
-}
-
-func animals(w http.ResponseWriter, r *http.Request) {
+func init() {
 	animalList = []Animal{
 		{Species: "ape", Name: "hans"},
 		{Species: "cat", Name: "mew"},
@@ -33,6 +23,37 @@ func animals(w http.ResponseWriter, r *http.Request) {
 		{Species: "plane", Name: "apache helicopter"},
 		{Species: "chocobo", Name: "chickoo"},
 	}
+}
+
+func main() {
+	routes()
+	fmt.Println("Server is running on port: 8888")
+	http.ListenAndServe(":8888", nil)
+}
+
+func routes() {
+	http.HandleFunc("/getAnimals", getAnimals)
+	http.HandleFunc("/addAnimal", addAnimal)
+}
+
+func getAnimals(w http.ResponseWriter, r *http.Request) {
 	res, _ := json.MarshalIndent(animalList, "", " ")
 	fmt.Fprintf(w, string(res))
+}
+
+func addAnimal(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		var animal Animal
+		animal.Species = r.FormValue("species")
+		animal.Name = r.FormValue("aname")
+
+		if animal.Species == "" || animal.Name == "" {
+			http.Error(w, "Need some payload", http.StatusNoContent)
+			return
+		}
+
+		animalList = append(animalList, animal)
+		res, _ := json.MarshalIndent(animalList, "", " ")
+		fmt.Fprintf(w, string(res))
+	}
 }
