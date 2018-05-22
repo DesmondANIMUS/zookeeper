@@ -6,3 +6,10 @@ export const selectAnimal = (animal) => {
         payload: animal
     }
 }
+
+export const getAnimals = (animals) => {
+    return {
+        type: ACTION_TYPES.GET_ANIMALS,
+        payload: animals
+    }
+}
