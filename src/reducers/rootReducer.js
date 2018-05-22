@@ -1,5 +1,4 @@
 import {combineReducers} from 'redux';
-import birbReducer from './birbReducer';
 import animalReducer from './animalReducer';
 import selectAnimalReducer from './selectedAnimalReducer';
 
