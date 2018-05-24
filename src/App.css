@@ -65,3 +65,9 @@
 .details::selection {
   background: gray;
 }
+
+.btn {
+  background: silver;
+  border: none;
+  font-weight: bold;
+}
