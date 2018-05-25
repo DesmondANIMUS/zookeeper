@@ -5,8 +5,7 @@ export default (state = null, action) => {
         case ACTION_TYPES.ANIMAL_HOVERED:
         case ACTION_TYPES.ANIMAL_CLICKED:           
             return action.payload;
-        default: break;        
-    }    
-
-    return state;
+        default:
+            return state;     
+    }   
 }

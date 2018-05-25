@@ -5,7 +5,7 @@ import Animal from '../components/Animal';
 import {getAnimals} from '../actions/actions';
 
 class AnimalList extends Component {        
-    render() {            
+    render() {                    
         return (
             <div className="grid-animal-list">                 
                 <div className="btn card no-selection" onClick={() => this.props.getAnimals()}>Fetch Data</div>
@@ -21,5 +21,5 @@ const mapStateToProps = (state) => {
         animals: state.animals
     }
 }
-
+ 
 export default connect(mapStateToProps, {getAnimals})(AnimalList);
