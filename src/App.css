@@ -37,14 +37,13 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: 70px 50px 1fr;  
+  grid-template-rows: 70px 1fr;  
 }
 
 .grid-two {
-  grid-row-start: 2;
-  grid-column: 1 / 6;
   display: grid;    
   grid-template: repeat(2, 0.5fr) / repeat(2, 1fr);  
+  overflow-x: auto;
 }
 
 .grid-intro {  
@@ -81,20 +80,19 @@
 .btn-add {  
   background: black;
   color: white;
-  border: thin;    
   margin-top: 5px;
+  margin-bottom: 5px;
   text-align: center;  
+  border: thin solid black;
   grid-column: 1 / -1;
 }
 
 .btn-add:hover, .btn-add:focus {  
   background: white;
   color: black;
-  border: thin solid black;
 }
 
-.btn-add:active {  
-  border: thin solid white;
+.btn-add:active {    
   background: black;
   color: white;
 }
