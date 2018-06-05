@@ -1,11 +1,13 @@
 import React from 'react';
+import AddAnimal from './containers/AddAnimal';
 import AnimalInfo from './containers/AnimalInfo';
 import AnimalList from './containers/AnimalList';
 
 const App = () => (
   <div className="grid">
-    <h2 className="grid-intro no-selection">ZoooKeeper</h2>
-    <AnimalList/>    
+    <h1 className="grid-intro no-selection">ZoooKeeper</h1>        
+    <AddAnimal />
+    <AnimalList />    
     <div className="grid-right">
       <h1 className="details no-selection">Details</h1>
       <AnimalInfo />

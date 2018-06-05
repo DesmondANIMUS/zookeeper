@@ -14,7 +14,7 @@ class AnimalList extends Component {
             else return this.props.animalList.map((animal, i) => <Animal key={i} animalInfo={animal}/>)
         }
         return (
-            <div className="grid-animal-list">                 
+            <div className="grid-animal-list" id="animal-grid">                              
                 <div className="btn card no-selection" onClick={() => this.props.getAnimals()}>Fetch Data</div>
                 {renderAnimals()}                
                 <div className="btn card no-selection" onClick={() => this.props.getAnimals()}>Fetch Data</div>
