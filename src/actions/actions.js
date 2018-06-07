@@ -14,6 +14,16 @@ export const getAnimals = () => {
         dispatch({
             type: ACTION_TYPES.GET_ANIMALS,
             payload: data
-        })
+        });
+    }
+}
+
+export const addAnimal = () => {
+    return async (dispatch) => {
+        const {data} = await axios.post(URL.ADD_ANIMAL);
+        dispatch({
+            type: ACTION_TYPES.ADD_ANIMAL,
+            payload: data
+        });
     }
 }
