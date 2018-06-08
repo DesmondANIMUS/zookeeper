@@ -1,5 +1,7 @@
 import '../App.css';
+import {connect} from 'react-redux';
 import React, { Component } from 'react';
+import {addAnimal} from '../actions/actions';
 
 class AddAnimal extends Component {
     constructor(props) {
@@ -26,10 +28,10 @@ class AddAnimal extends Component {
                 <input type="text" name="animal_name" id="animal_name" 
                         placeholder="Animal Name" className="animal-input"
                         onChange={this.onChange} value={animal.animal_name}/>                                        
-                <div className="btn-add no-selection">Add Animal</div>
+                <div className="btn-add no-selection" onClick={() => this.props.addAnimal(animal)}>Add Animal</div>
             </div>
         );
     }
 }
 
-export default AddAnimal;
+export default connect(null, {addAnimal})(AddAnimal);

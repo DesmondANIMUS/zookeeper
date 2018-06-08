@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {ACTION_TYPES, URL} from '../constants';
+import {ACTION_TYPES, URL, CONFIG} from '../constants';
 
 export const selectAnimal = (animal) => {
     return {
@@ -18,12 +18,21 @@ export const getAnimals = () => {
     }
 }
 
-export const addAnimal = () => {
+export const addAnimal = (animal) => {
+    console.log("addAnimal Action: ", animal);
+    const params = getParams(animal);
     return async (dispatch) => {
-        const {data} = await axios.post(URL.ADD_ANIMAL);
+        const {data} = await axios.post(URL.ADD_ANIMAL, params, CONFIG);
         dispatch({
             type: ACTION_TYPES.ADD_ANIMAL,
             payload: data
         });
     }
+}
+
+const getParams = (animal) => {
+    let params = new URLSearchParams();
+    params.append('aname', animal.animal_name);
+    params.append('species', animal.species);
+    return params;    
 }
