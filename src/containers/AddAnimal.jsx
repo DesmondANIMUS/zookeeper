@@ -28,10 +28,18 @@ class AddAnimal extends Component {
                 <input type="text" name="animal_name" id="animal_name" 
                         placeholder="Animal Name" className="animal-input"
                         onChange={this.onChange} value={animal.animal_name}/>                                        
-                <div className="btn-add no-selection" onClick={() => this.props.addAnimal(animal)}>Add Animal</div>
+                <div className="btn-add no-selection" onClick={() => this.props.addAnimal(animal)}>
+                    {this.props.animalAdded == true ? "Done" : "Add Animal"}
+                </div>
             </div>
         );
     }
 }
 
-export default connect(null, {addAnimal})(AddAnimal);
+const mapStateToProps = (state) => {
+    return {
+        animalAdded: state.animalAdded
+    }
+}
+
+export default connect(mapStateToProps, {addAnimal})(AddAnimal);
